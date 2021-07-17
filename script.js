@@ -70,15 +70,15 @@ class BalanceManager{
         else
         {
             let str ='';
-            const li_item = document.createElement('li');
+            const li_item = document.createElement('tr');
             if(txntype.value === '0'){
-            li_item.classList.add('alert','alert-danger');
-            li_item.innerHTML = `${txn.price} ${txn.title} ${txn.time} Debit`;
+ //               td_elem.classList.add('alert','alert-danger');
+                li_item.innerHTML = `<td>₹ ${txn.price}</td><td>${txn.title}</td><td>${txn.time}</td><td>Debit</td>`;
             this.debitBalance();
             }
             else{
-            li_item.classList.add('alert','alert-success');
-            li_item.innerHTML = `${txn.price} ${txn.title} ${txn.time} Credit`;
+//                td_elem.classList.add('alert','alert-success');
+                li_item.innerHTML = `<td>₹ ${txn.price}</td><td>${txn.title}</td><td>${txn.time}</td><td>Credit</td>`;
             this.creditBalance();
             }
             tx_list.appendChild(li_item);

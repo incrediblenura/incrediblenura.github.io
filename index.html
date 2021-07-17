@@ -13,6 +13,8 @@
         body{
             width:80vw;
             margin-left:10%;
+            /* background: #333;
+            color:white; */
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.js"></script>
@@ -23,7 +25,9 @@
     <div class="w3-container">
         <div class="w3-row"><h2>Expense Tracker</h2></div>
         <div class="w3-row">
-           <h2 class="w3-col">Balance</h2></div>
+           <h2 class="w3-col m6 s6">Balance</h2>
+           <button id="dark_theme" class="btn btn-default w3-black" onclick="document.body.style.backgroundColor='black';">Dark</button>
+        </div>
             <div class="w3-row">
            <h1 id="total" class="w3-xxxlarge">₹ <span  id="balance"></span></h1>
         </div>
@@ -31,8 +35,8 @@
             <canvas id="myChart" ></canvas>
         </div>
         </div>
-        <div class="w3-row">
-            <table class="w3-table w3-striped w3-border">
+        <div class="row">
+            <table class="table table-bordered">
                 <tr>
                     <th class="w3-center">Debit</th>
                     <th class="w3-center">Credit</th>
@@ -43,38 +47,48 @@
                 </tr>
             </table>
         </div>
-        <div class="form-group container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
+        <div class="container">
+        <table class="row table">
+            <tr class="col-xl-12">
+            <td>
                 <label for="">
-                    <input type="text" class="form-control" placeholder="Title" id="title"/>
+                    <input type="text" class="form-control" placeholder="Item" id="title"/>
                 </label>
-            </div>
-            <div class="col-md-4 col-sm-4">
+            </td>
+            <td>
                 <label for="">
                     <input type="number" min="1" class="form-control" placeholder="Price" id="price"/>
                 </label>
-            </div>
-            <div class="col-md-4 col-sm-4">
+            </td>
+            <td>
                 <label for="">
                     <input type="date" class="form-control" placeholder="Date" id="date"/>
                 </label>
-            </div>
-            </div>
-                <br>
-                <br>
-                <br>
+            </td>
+            </tr>
+            <tr class="col-xl-12">
+            <td>
                 <select name="" id="txntype" class="form-control">
-                <option value="0">Debit</option>
-                <option value="1">Credit</option>
+                    <option value="0">Debit</option>
+                    <option value="1">Credit</option>
                 </select>
-                <br>
-                <br>
-                <button onclick="balance.addTxn()" class="btn btn-success w3-block">&plus;</button>
+            </td>
+            <td colspan="2">
+                <button onclick="balance.addTxn()" class="btn btn-success w3-block">Add Item</button>
+            </td>
+            </tr>
+        </table>
         </div>
-        <div class=" w3-container w3-row">
-            <ul id="tx_list" class="w3-ul">
-            </ul>
+        <div class="w3-container">
+            <h4>Transactions &RightAngleBracket;&RightAngleBracket;</h4>
+            <table class="table table-hover" id="tx_list">
+                <tr>
+                    <th>Amount</th>
+                    <th>Item</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
