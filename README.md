@@ -1,4 +1,4 @@
-See it live here [incrediblenura.github.io](https://www.incrediblenura.github.io)
+See it live here [incrediblenura.github.io](https://incrediblenura.github.io)
 ### incrediblenura.github.io
 - [x] Expense Tracker
 - [x] Technical Documentation
