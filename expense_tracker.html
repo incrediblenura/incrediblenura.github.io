@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
+    <script>
+        const $ = (_) => {return document.querySelector(_);}
+    </script>
+    <style>
+        body{
+            width:80vw;
+            margin-left:10%;
+            /* background: #333;
+            color:white; */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="w3-container">
+        <div class="w3-row"><h2>Expense Tracker</h2></div>
+        <div class="w3-row">
+           <h2 class="w3-col m6 s6">Balance</h2>
+           <button id="dark_theme" class="btn btn-default w3-black" onclick="document.body.style.backgroundColor='black';">Dark</button>
+        </div>
+            <div class="w3-row">
+           <h1 id="total" class="w3-xxxlarge">₹ <span  id="balance"></span></h1>
+        </div>
+        <div class="w3-row chart-container" style="position: relative; height:auto; width:80vw">
+            <canvas id="myChart" ></canvas>
+        </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <th class="w3-center">Debit</th>
+                    <th class="w3-center">Credit</th>
+                </tr>
+                <tr>
+                    <td class="w3-text-red w3-center w3-xlarge">₹ <span id="debit_am">0</span></td>
+                    <td class="w3-text-green w3-center w3-xlarge">₹ <span id="credit_am">0</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container">
+        <table class="row table">
+            <tr class="col-xl-12">
+            <td>
+                <label for="">
+                    <input type="text" class="form-control" placeholder="Item" id="title"/>
+                </label>
+            </td>
+            <td>
+                <label for="">
+                    <input type="number" min="1" class="form-control" placeholder="Price" id="price"/>
+                </label>
+            </td>
+            <td>
+                <label for="">
+                    <input type="date" class="form-control" placeholder="Date" id="date"/>
+                </label>
+            </td>
+            </tr>
+            <tr class="col-xl-12">
+            <td>
+                <select name="" id="txntype" class="form-control">
+                    <option value="0">Debit</option>
+                    <option value="1">Credit</option>
+                </select>
+            </td>
+            <td colspan="2">
+                <button onclick="balance.addTxn()" class="btn btn-success w3-block">Add Item</button>
+            </td>
+            </tr>
+        </table>
+        </div>
+        <div class="w3-container">
+            <h4>Transactions &RightAngleBracket;&RightAngleBracket;</h4>
+            <table class="table table-hover" id="tx_list">
+                <tr>
+                    <th>Amount</th>
+                    <th>Item</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>

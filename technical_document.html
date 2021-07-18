@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link type="preload" rel="stylesheet" href="">
+    <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/styles/default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.1/styles/github.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.1.0/build/highlight.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="./css/tech_doc.css">
+</head>
+<body>
+    <aside>
+        <nav id="navbar">
+            <header>Object Oriented Programming</header>
+            <a href="#concepts_of_oops" class="nav-link">Concepts Of OOPs</a>
+            <a href="#object" class="nav-link">Object</a>
+            <a href="#class" class="nav-link">Class</a>
+            <a href="#inheritance" class="nav-link">Inheritance</a>
+            <a href="#polymorphism" class="nav-link">Polymorphism</a>
+            <a href="#abstraction" class="nav-link">Abstraction</a>
+        </nav>
+    </aside>
+    <main id="main-doc">
+        <section id="concepts_of_oops" class="main-section">
+            <header>Concepts Of OOPs</header>
+            <p>Object means a real-world entity such as a pen, chair, table, computer, watch, etc. Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies software development and maintenance by providing some concepts:</p>
+            <p>The main aim of object-oriented programming is to implement real-world entities, for example, object, classes, abstraction, inheritance, polymorphism, etc.</p>
+            <ul>
+                <li>Object</li>
+                <li>Class</li>
+                <li>Inheritance</li>
+                <li>Polymorphism</li>
+                <li>Abstraction</li>
+            </ul>
+        </section>
+        <section id="object" class="main-section">
+            <header>Object</header>
+            <p>Any entity that has state and behavior is known as an object. For example, a chair, pen, table, keyboard, bike, etc. It can be physical or logical.</p>
+            <p>Example: A dog is an object because it has states like color, name, breed, etc. as well as behaviors like wagging the tail, barking, eating, etc.</p>
+            <pre>
+                <code>     
+    //An Scanner Object that takes Input from user using System's InputStream
+    Scanner scanner = new Scanner(System.in);
+            </code>
+        </pre>
+        </section>
+        <section id="class" class="main-section">
+            <header>Class</header>
+            <p>Collection of objects is called class. It is a logical entity.</p>
+            <p>A class can also be defined as a blueprint from which you can create an individual object. Class doesn't consume any space.</p>
+            <pre><code>
+    //Demonstration of creating a class in Java
+    public class MainClass{
+        public static void main(String ... args){
+            System.out.println("Hello World!");
+        }
+    }
+            </code>
+        </pre>
+        </section>
+        <section id="inheritance" class="main-section">
+            <header>Inheritance</header>
+            <p>When one object acquires all the properties and behaviors of a parent object, it is known as inheritance. It provides code reusability. It is used to achieve runtime polymorphism.</p>
+            <p>Inheritance is used to make your code more reusable. Java uses <em><code>extends</code></em> keyword to extends properties and methods from another class.</p>
+            <pre><code class="language-java">
+//MainClass inheriting constructors and methods from JFrame class
+public class MainClass extends JFrame{
+    MainClass(String title){
+        super(title);
+        setSize(700,500);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+    }
+}
+            </code>
+        </pre>
+        </section>
+        <section id="polymorphism" class="main-section">
+            <header>Polymorphism</header>
+            <p>If one task is performed in different ways, it is known as polymorphism. For example: to convince the customer differently, to draw something, for example, shape, triangle, rectangle, etc.</p>
+            <p>In Java, we use method overloading and method overriding to achieve polymorphism.</p>
+            <pre><code>
+public static void main(String ... args){
+    System.out.println(args[0]);
+}
+public void main(int number){
+    System.out.println(number);
+}
+            </code>
+            </pre>
+        </section>
+        <section id="abstraction" class="main-section">
+            <header>Abstraction</header>
+            <p>Hiding internal details and showing functionality is known as abstraction. For example phone call, we don't know the internal processing.</p>
+            <p>Abstraction is achieved in Java using Abstract classes and methods and by Using Interfaces.</p>
+            <pre><code class="language-java">
+public abstract class Shape{
+    abstract public double area();
+    abstract public double perimeter();
+}
+class Square extends Shape{
+    private double side;
+    Square(double side){
+        this.side = side;
+    }
+    public void setSide(double s){
+        side = s;
+    }
+    @override
+    public double area(){
+        return side*side;
+    }
+    @override
+    public double perimeter(){
+        return 4.00 * side;
+    }
+} 
+            </code></pre>
+        </section>
+    </main>
+</body>
+</html>
