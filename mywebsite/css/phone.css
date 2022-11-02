@@ -1,0 +1,42 @@
+#navbar{
+    display: flex;
+    flex-direction: column;
+}
+#navbar::before{
+    content: " ";
+    position: absolute;
+    background-image: url('../img/cover-image-second.png');
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    height: 12rem;
+    width: 105vw;
+    opacity: 0.7;
+}
+h3{
+    color: black;
+    font-size: 2.5rem;
+    font-family: -apple-system, BlinkMacSystemFont;
+    /* background: rgb(102, 0, 255, 0.57); */
+    width: 105vw;
+}
+main{
+    display: flex;
+    flex-direction:column;
+    /*grid-template-columns: 30% 70%;*/
+}
+#hobbies{
+    display: flex;
+    flex-direction: column;
+}
+#socials{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.nav_list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
