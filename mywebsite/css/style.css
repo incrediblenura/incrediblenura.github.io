@@ -96,10 +96,7 @@ h3,h4{
     text-align: center;
     text-decoration: underline;
     color: white;
-    background: linear-gradient(rgb(0, 177, 221), rgb(137, 240, 190));
-/*     -o-background: -o-linear-gradient(rgb(0, 177, 221),rgb(137, 240, 190)); */
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+
 }
 li{
     list-style-type: none;
