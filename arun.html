@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      .painter {
+        height: 200px;
+        width: 100%;
+        border: 2px dashed black;
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(123, 234, 121, 0.8);
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- Navigation bar -->
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-extend">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              <img
+                src="https://www.getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
+                alt="Bootstrap"
+                width="30"
+                height="24"
+              />
+              CSS Gradient Generator
+            </a>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="row">
+        <aside class="col-md-3">
+          <nav class="nav nav-tabs flex-column flex-sm-row">
+            <div>
+                <p>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Background</a>
+                   </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <div class="form-group">
+                        Color 1 :
+                        <input type="color" id="col1" class="form-control-color" /><br />
+                        Color 2 :
+                        <input type="color" id="col2" class="form-control-color" /><br />
+                        Angle :
+                        <input type="range" max="180" step="1" class="form-range" min="0" id="angle"/>
+                        <input type="text" name="" disabled class="form-control" id="angle_text" size="3"/><br />
+                        Opacity :
+                        <input type="range" class="form-range" max="1.0" step="0.1" min="0.0" id="opac"/>
+                        <input type="text" name="" id="opacText" class="form-control" size="3" disabled/><br />
+                        <button onclick="$()" class="btn btn-primary">Generate</button>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div>
+                <p>
+                    <a class="flex-sm-fill text-sm-center nav-link" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">Text</a>
+                </p>
+                <div class="collapse" id="collapseExample2">
+                    <div class="card card-body">
+                        <div class="form-group">
+                            <input type="text" name="" id="textTitle" class="form-control" size=" " />
+                            <button class="btn btn-primary" onclick="editname()">Edit</button>
+                          </div>
+                    </div>
+                  </div>
+            </div>
+          </nav>
+        </aside>
+        <div class="col-md-9">
+          <div class="painter" id="card">
+            <h3 id="paintitle" style="text-align:center; color:white;font-family:'Outfine'">Enter your name</h3>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var angle = document.getElementById("angle");
+      var angle_text = document.getElementById("angle_text");
+      var opac = document.getElementById("opac");
+      var opacText = document.getElementById("opacText");
+      opac.addEventListener("input", () => {
+        opacText.value = opac.value;
+        $();
+      });
+      angle.addEventListener("input", (event) => {
+        angle_text.value = angle.value;
+        // console.log("linear-gradient("+angle.value+"deg, ",col1.value,",",col2.value,")");
+        $();
+      });
+      var  card = document.getElementById("card");
+      var  col1 = document.getElementById("col1");
+      var  col2 = document.getElementById("col2");
+      var paint = document.getElementById("paintitle");
+      var    pt = document.getElementById("textTitle");
+      let strText = 'Enter your name';
+      function editname(){
+        if(pt.value === '' || pt.value == null)return;
+        strText = pt.value;
+        paint.innerText = strText;
+        pt.value = '';
+        }
+        
+      function startup(){
+        col1.value = '#C850C0';
+        col2.value = '#4158D0';
+        card.style.background = "linear-gradient(#4158D0,#C850C0)";
+        paint.innerText = strText;
+    }
+      function $() {
+        card.style.background = "linear-gradient("+angle.value +"deg,"+col1.value +"," +col2.value +")";
+      }
+      //
+      startup();
+    </script>
+  </body>
+</html>
