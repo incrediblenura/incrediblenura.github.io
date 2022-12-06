@@ -5,50 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" preload href="./prismc.css"/> -->
-    <link rel="stylesheet" preload href="./prism.css"/>
+    <link rel="stylesheet" preload href="./css/prism.css"/>
+    <link rel="stylesheet" href="./css/c_tutorials.css">
     <title>Document</title>
-    <style>
-        @import url("https://www.fonts.googleapis.com/css3/family=Poppins");
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing:content-box;
-            font-family: 'Poppins',sans-serif;
-        }
-        .grid-container{
-            display: grid;
-        }
-        .header,.footer{
-            grid-column-start: 1;
-            grid-column-end:12;
-            display:fixed;
-            padding: 1.3rem;
-            text-align: center;
-            margin: 0 0 50px 0;
-            background: #000;
-            color: wheat;
-        }
-        code,kbd{
-            font-family: 'Consolas',sans-serif;
-        }
-        kbd{
-            text-decoration: underline;
-        }
-        .aside{
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-        .main{
-            grid-column-start:4;
-            grid-column-end:10;
-        }
-        a:hover{
-            color: yellow;
-        }
-        a:visited{
-            color: red;
-        }
-    </style>
+    
 </head>
 <body class="grid-container">
     <header class="header">
@@ -63,7 +23,7 @@
     </aside>
     <div class="main">
         <div id="printf">
-            <h2>printf formatted Output function</h2>
+            <h2>Formatted Output - printf</h2>
             <hr>
             <p><kbd>printf()</kbd> function prints given formatted string on screen.</p>
             <h3>Description</h3>
@@ -79,14 +39,51 @@ int main(){
 <pre class=" language-plaintext ">
 <code>Hello World</code> 
 </pre>
-<p>Since an String is already in  character format it is not needed to convert in characters.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;The format string contains two types of objects,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Since an String is already in  character format it is not needed to convert in characters.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The format string contains two types of objects: ordinary characters, which
+are copied to the output stream, and conversion specifications, each of which causes conversion and printing of the next successive argument
+to <kbd>printf</kbd>. Each conversion specification begins with a <kbd>%</kbd> and ends with a conversion character. Between the <kbd>%</kbd>
+and the conversion character there may be, in order:
+
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Conversion Character
+            </th>
+            <th>
+                Usage
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <kbd>-</kbd>
+            </td>
+            <td>
+                A minus sign, which specifies the left adjustment of the converted argument.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>number</kbd>
+            </td>
+            <td>
+                A number that specifies the minimum field width.
+                The converted arguments will be printed in a field at least this wide.
+                If necessary it will be padded on the left (or right, if left adjustment is called for) to make up the field width. 
+            </td>
+        </tr>
+    </tbody>
+    <caption>Table Caption</caption>
+</table>
 </div>
     </div>
     <footer class="footer">
         <p style="text-align: center;">Arun Kumar Kaushik &copy; <script> document.write(new Date().getFullYear()) </script></p>
     </footer>
-    <script src="./prism.js"></script>
-    <!-- <script src="./prism2.js"></script> -->
+    <script src="./js/prism.js"></script>
 </body>
 </html>
