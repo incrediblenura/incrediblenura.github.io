@@ -40,18 +40,41 @@ kbd{
     border-radius: 10px;
     background-color: #fefefe;
 }
+td{
+    padding: 10px 20px;
+}
 .aside{
     grid-column-start: 1;
     grid-column-end: 3;
 }
 .main{
     grid-column-start:4;
-    grid-column-end:10;
-    margin-left: 50px;
+    grid-column-end:5;
+    margin: 0 150px;
 }
 a:hover{
     color: yellow;
 }
 a:visited{
     color: red;
+}
+td > kbd{
+    font-size: 1.2rem;
+}
+td{
+    font-size: 1.2rem;
+}
+.upper{
+    text-transform: uppercase;
+}
+th{
+    padding: 0 15px;
+}
+td{
+    text-align: center;
+}
+@media only screen and (max-width : 800px) {
+    .main{
+        margin: 0 50px;
+    }
 }

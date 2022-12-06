@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" preload href="./prismc.css"/> -->
     <link rel="stylesheet" preload href="./css/prism.css"/>
-<<<<<<< HEAD
     <link rel="stylesheet" href="./css/c_tutorials.css">
-=======
->>>>>>> ff6d9c241aaf3475f2fbf19f3ce73cc558562d43
     <title>Document</title>
     
 </head>
 <body class="grid-container">
     <header class="header">
-        C Programming Language
+        <h1>C Programming Language</h1>
+        <a href="scanf.html">Next &GT;</a>
     </header>
     <aside class="aside">
         <nav>
             <ul>
                 <li><a href="#printf">printf function</a></li>
+                <li><a href="scanf.html">scanf function</a></li>
             </ul>
         </nav>
     </aside>
@@ -49,38 +48,138 @@ to <kbd>printf</kbd>. Each conversion specification begins with a <kbd>%</kbd> a
 and the conversion character there may be, in order:
 
 </p>
-<table>
+&nbsp;
+<ul>
+    <li>
+        <kbd>-</kbd>
+        A minus sign, which specifies the left adjustment of the converted argument.
+    </li>
+    <li>
+        <kbd>number</kbd>
+        A number that specifies the minimum field width.
+        The converted arguments will be printed in a field at least this wide.
+        If necessary it will be padded on the left (or right, if left adjustment is called for) to make up the field width.</li>
+    <li>
+        <kbd>.</kbd>
+        A period , which seperates the field width from the precision.
+    </li>
+    <li>
+        <kbd>number</kbd>
+        A number, the precision , that specifies the maximum number of characters to be printed
+        from a string, or the number of digits after the decimal points of a floating point value,
+        or the minimum number of digits for an integer.
+    </li>
+    <li>
+        <kbd>h | l</kbd>
+        An h if the integer is to be printed as a <kbd>short</kbd> or <kbd>l</kbd> (letter ell) if as a <kbd>long</kbd>.
+    </li>
+    <li>
+    <kbd> undefined </kbd>
+    If the character after the <kbd>%</kbd> is not a conversion specification, the behaviour is undefined.
+    </li>
+</ul>
+<table border="1">
+    <caption class="upper">Basic Print Conversion</caption>
     <thead>
-        <tr>
-            <th>
-                Conversion Character
-            </th>
-            <th>
-                Usage
-            </th>
-        </tr>
+        <th class="upper">
+            Character
+        </th>
+        <th class="upper">
+            Argument Type: Printed as
+        </th>        
     </thead>
     <tbody>
         <tr>
             <td>
-                <kbd>-</kbd>
+                <kbd>d, i</kbd>
             </td>
             <td>
-                A minus sign, which specifies the left adjustment of the converted argument.
+                <kbd>int;</kbd> decimal number.
             </td>
         </tr>
         <tr>
             <td>
-                <kbd>number</kbd>
+                <kbd>o</kbd>
             </td>
             <td>
-                A number that specifies the minimum field width.
-                The converted arguments will be printed in a field at least this wide.
-                If necessary it will be padded on the left (or right, if left adjustment is called for) to make up the field width. 
+                <kbd>int;</kbd> unsigned octal number (without a leading zero).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>x, X</kbd>
+            </td>
+            <td>
+                <kbd>int;</kbd> unsigned hexadecimal number (without a leading 0x or 0X), using <kbd>abcdef</kbd>or <kbd>ABCDEF</kbd> for 10, ..., 15.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>u</kbd>
+            </td>
+            <td>
+                <kbd>int;</kbd> unsigned decimal number.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>c</kbd>
+            </td>
+            <td>
+                <kbd>int;</kbd> single character.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>s</kbd>
+            </td>
+            <td>
+                <kbd>char *;</kbd> print characters from the string until a <kbd>'\0'</kbd> or the number of characters given by the precision. 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>f</kbd>
+            </td>
+            <td>
+                <kbd>double;</kbd><i>[-]m.dddddd, </i>where the number of <i>d</i>'s is given by the precision (default 6).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>e, E</kbd>
+            </td>
+            <td>
+                <kbd>double;</kbd><i>[-]m.dddddd,</i> <kbd>e&PlusMinus;<i>xx</i></kbd> or <i>[-]m.dddddd <kbd>E&PlusMinus;</kbd></i> where the 
+                number of <i>d</i>'s is given by the precision (default 6).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>g, G</kbd>
+            </td>
+            <td>
+                <kbd>double;</kbd> use <kbd>%e</kbd> or <kbd>%E</kbd> if the exponent is less than -4 or greater than or equal to the precision;
+                otherwise use <kbd>%f</kbd>. Trailing zeros and a trailing decimal point are not printed.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>p</kbd>
+            </td>
+            <td>
+                <kbd>void *;</kbd> pointer (implementation-dependent representation)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <kbd>%</kbd>
+            </td>
+            <td>
+                no arguments is converted; print a <kbd>%</kbd>
             </td>
         </tr>
     </tbody>
-    <caption>Table Caption</caption>
 </table>
 </div>
     </div>
