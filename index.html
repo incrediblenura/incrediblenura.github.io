@@ -4,108 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh's Website</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" media="screen and (max-width: 900px)" href="./css/phone.css">
-    <link rel="icon" href="./img/profile-pic (6).png">
-    <script src="https://kit.fontawesome.com/7374ee0e78.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" preload href="./prismc.css"/> -->
+    <link rel="stylesheet" preload href="./prism.css"/>
+    <title>Document</title>
+    <style>
+        @import url("https://www.fonts.googleapis.com/css3/family=Poppins");
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:content-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        .grid-container{
+            display: grid;
+        }
+        .header,.footer{
+            grid-column-start: 1;
+            grid-column-end:12;
+            display:fixed;
+            padding: 1.3rem;
+            text-align: center;
+            margin: 0 0 50px 0;
+            background: #000;
+            color: wheat;
+        }
+        code,kbd{
+            font-family: 'Consolas',sans-serif;
+        }
+        kbd{
+            text-decoration: underline;
+        }
+        .aside{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .main{
+            grid-column-start:4;
+            grid-column-end:10;
+        }
+        a:hover{
+            color: yellow;
+        }
+        a:visited{
+            color: red;
+        }
+    </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="small_profile">
-            <div class="">
-                <img src="./img/profile-pic (6).png" alt="" id="logo">
-            </div>
-            <div>
-                <span style="margin: 0 0 0 15px; text-transform: uppercase;color: white;">Harsh Kaushik</span>
-            </div>
-        </div>
-        <div class="nav_list">
-        <ul>
-            <li class="nav_element"><a href="#main">Home</a></li>
-            <li class="nav_element"><a href="#main">About Me</a></li>
-            <li class="nav_element"><a href="#hobbies">Hobbies</a></li>
-            <li class="nav_element"><a href="#socials">Socials</a></li>
-            <li class="nav_element"><a href="https://incrediblenura.github.io/">Arun Kaushik</a></li>
-            <li class="nav_element"><a href="technical_document.html">Blog</a></li>
-            <li class="nav_element"><a href="arun.html">CSS Generator</a></li>
-        </ul>
+<body class="grid-container">
+    <header class="header">
+        C Programming Language
+    </header>
+    <aside class="aside">
+        <nav>
+            <ul>
+                <li><a href="#printf">printf function</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="main">
+        <div id="printf">
+            <h2>printf formatted Output function</h2>
+            <hr>
+            <p><kbd>printf()</kbd> function prints given formatted string on screen.</p>
+            <h3>Description</h3>
+            <p>The output function <kbd>printf</kbd> translates internal values to characters.</p>
+            <p> <strong>Syntax</strong> : <kbd>int printf(char *format, <i>arg<sub>1</sub></i>, <i>arg<sub>2</sub></i>, ...)</kbd></p>
+            <p><kbd>printf</kbd> converts, formats, and prints its arguments on the standard output under control of the <kbd>format</kbd>. It returns the number of characters successfully printed.</p>
+            <h4>Example file: &nbsp;<kbd>main.c</kbd></h4>
+            <pre data-src="./code/main.c" data-download-link><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+int main(){
+    printf("Hello World!");
+    return 0;
+}</code></pre>
+<pre class=" language-plaintext ">
+<code>Hello World</code> 
+</pre>
+<p>Since an String is already in  character format it is not needed to convert in characters.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The format string contains two types of objects,</p>
+</div>
     </div>
-    </nav>
-
-<section id="section">
-    <div id="main">
-        <div class="aboutme">
-            <div>
-                <h3>
-                    About Me
-                </h3>
-            </div>
-        </div>
-        <div class="container">
-            <div class="img_cont">
-                <img src="./img/profile-pic (6).png" alt="" id="mainimg"/>
-            </div>
-            <div id="aboutmepara">
-                <div>
-                    <p>Hello Everyone,</p>
-                </div>
-            <div>
-                <p>I am Harsh Kaushik a student of class twelfth and a programmer in making. I love programming and I ❤️</p> 
-                    <ul>
-                        <li><i class="devicon-python-plain colored"></i> Python</li>
-                        <li><i class="devicon-java-plain-wordmark colored"></i> Java,</li>
-                        <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-                        <li><i class="devicon-cplusplus-plain colored"></i> C++</li>
-                        <li><i class="devicon-c-plain colored"></i> C</li>
-                    </ul>
-                        <p>and many other programming languages.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="hobbies">
-        <div>
-            <h3>Hobbies</h3>
-        </div>
-        <div class="hobbiesbody">
-        <div id="hobbie1" class="hobbiediv">
-            <h4 class="hobbiedivheading"> Coding</h4>
-            <p>Hello Everyone, <br> I think you all know that I love programming and I have made this website using HTML, CSS and it is a Static Website because I don't know JavaScript yet. I am learning Javascript, Python and Java. <br> <a href="./public/coding.html">Know more &rarr;</a> </p>
-        </div>
-        <div id="hobbie2" class="hobbiediv">
-            <h4 class="hobbiedivheading"> Reading </h4>
-            <p>I am not a hardcore reader, I read once in a while. I have read many books some of which are Turning Points by Dr. APJ Abdul Kalam, How to win friends and Influence people by Dale Carnigie. <a href="./public/reading.html">Know more &rarr;</a> </p>
-        </div>
-        <div id="hobbie3" class="hobbiediv">
-            <h4 class="hobbiedivheading"> Tabla</h4>
-            <p>Yes, I like to play tabla and I have gone to many national and state competition for tabla. <a href="./public/hobbie2.html">Know more &rarr;</a> </p>
-        </div>
-    </div>
-    </div>
-    <div id="socials">
-        <div>
-            <h3>Socials</h3>
-        </div>
-        <div class="social">
-        <div class="socialsdiv" id="social1">
-            <img src="./img/instagram.png" alt="">
-            <p>Although I am not very active on Instagram but yaha kuch daalna tha toh daal diya. You can see my Instagram account only if you follow me and If you follow or want to follow me <br><a href="https://www.instagram.com/harsh_kaushik31/">Click here.</a> &rarr;</p>
-        </div>
-        <div class="socialsdiv" id="social2">
-            <img src="./img/facebook.png" alt="">
-            <p> I do not use Facebook. Kuch nahi mila toh daal diya par agar aapka Facebook account hai aur chahte ho ki main Facebook par aau toh niche diye gaye link se poll par vote kar dena. <br><a href="facebook.html">Poll</a> &rarr;</p>
-        </div>
-        <div class="socialsdiv" id="social3">
-            <img src="./img/connection.png" alt="">
-            <p>Many of you don't know that I use twitter also but again I am not very active on Twitter also. One day I felt that I should have a twitter account so I got one and yes, Yuvraj is one of my names. <br> <a href="https://twitter.com/YuvrajK31032005">Visit Twitter</a> &rarr;</p>
-        </div>
-    </div>
-    </div>
-</section>
-<footer class="footer">
-   <p>This website was made by Harsh Kaushik &copy; <span id="year" ></span><script>document.getElementById("year").innerText = new Date().getFullYear();</script></span> <a href="https://github.com/harshkaushik31/mywebsite">Click here</a> to see the code</p>
-</footer>
+    <footer class="footer">
+        <p style="text-align: center;">Arun Kumar Kaushik &copy; <script> document.write(new Date().getFullYear()) </script></p>
+    </footer>
+    <script src="./prism.js"></script>
+    <!-- <script src="./prism2.js"></script> -->
 </body>
 </html>
