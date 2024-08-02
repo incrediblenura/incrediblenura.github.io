@@ -13,6 +13,8 @@ a{
     color: white;
     background-color: #a0a0a0;
     padding: 10px;
+    height: auto;
+    position:aboslute;
 }
 .header,.footer{
     grid-column-start: 1;
