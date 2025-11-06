@@ -8,7 +8,7 @@ let tictactoe = [0,0,0,0,0,0,0,0,0];
 // tilesArray.forEach((ele) => {
 //     console.log(ele.textContent);
 // });
-var gameIsPaused = false;//off
+var gameIsPaused = true;//off
 const playerX = {name:"Player X",value:-1,tile: "cross.png",winval:-3};
 const playerO = {name:"Player O",value:1,tile: "criss.png",winval:3};
 
