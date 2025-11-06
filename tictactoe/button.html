@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body class="container">
+    <div class="header">
+        <h1>Tic | Tac | Toe Game</h1>
+    </div>
+    <div class="card">
+        <h1 id="winnercard">Won</h1>
+    </div>
+    <div class="gametype">
+        <h2>Choose Game type : </h2>
+        <select name="gtypes" id="gtype">
+            <option name="oneplayer" value="1 Player">1 Player</option>
+            <option name="twoplayer" value="Players">2 Players</option>
+        </select>
+    </div>
+    <div class="turn">
+        <h2><span id="playerturn">Player</span> 's Turn</h2>
+    </div>
+    <div class="game">
+        <button class="tiles top left" id="tile0"></button>
+        <button class="tiles top" id="tile1"></button>
+        <button class="tiles top right" id="tile2"></button><br>
+        <button class="tiles left" id="tile3"></button>
+        <button class="tiles" id="tile4"></button>
+        <button class="tiles right" id="tile5"></button><br>
+        <button class="tiles left bottom" id="tile6"></button>
+        <button class="tiles bottom" id="tile7"></button>
+        <button class="tiles right bottom" id="tile8"></button>
+    </div>
+    <div class="controls">
+        <button class="control" id="gamestart">START</button>
+        <button class="control" id="resetButton">RESET</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script3.js"></script>
+</body>
+</html>
